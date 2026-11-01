@@ -237,7 +237,7 @@ Stated plainly, because results mean less without their boundaries:
 
 ## 📄 License
 
-MIT
+**MIT**
 ---
 
 
