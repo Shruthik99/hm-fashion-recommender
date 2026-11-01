@@ -150,24 +150,29 @@ Differences are computed **per customer** and reported with ±2 standard errors,
 </details>
 
 ## 🏗️ The pipeline
+
+```text
 31.8M purchases (Sept 2018 – Sept 2020)
-│
-├─ Keep last 6 months before the evaluation period
-├─ Drop customers & articles with <5 purchases (repeat until stable)
-▼
-451,552 customers × 35,314 articles (99.96% of the matrix is empty)
-│
-├─ Train: Feb 26 – Aug 25, 2020
-├─ Validation: Aug 26 – Sep 8 ← all tuning happens here
-└─ Test: Sep 9 – Sep 22 ← scored once
-│
-▼
+        │
+        ├─ Keep last 6 months before the evaluation period
+        ├─ Drop customers & articles with <5 purchases (repeat until stable)
+        ▼
+451,552 customers × 35,314 articles  (99.96% of the matrix is empty)
+        │
+        ├─ Train: Feb 26 – Aug 25, 2020
+        ├─ Validation: Aug 26 – Sep 8    ← all tuning happens here
+        └─ Test: Sep 9 – Sep 22          ← scored once
+        │
+        ▼
 ┌───────────────────────────────────────────────┐
-│ Popularity most-bought articles, last day │
-│ ALS 32 factors, 7-day half-life │
-│ Hybrid 0.7 × ALS + 0.3 × content │
-│ MMR greedy re-rank, λ = 0.8 │
+│ Popularity   most-bought articles, last day   │
+│ ALS          32 factors, 7-day half-life      │
+│ Hybrid       0.7 × ALS + 0.3 × content        │
+│ MMR          greedy re-rank, λ = 0.8          │
 └───────────────────────────────────────────────┘
+        ▼
+   12 recommendations per customer
+```
 
 
 ---
