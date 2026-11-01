@@ -1,0 +1,6 @@
+pandas
+numpy
+scipy
+implicit
+matplotlib
+kagglehub
